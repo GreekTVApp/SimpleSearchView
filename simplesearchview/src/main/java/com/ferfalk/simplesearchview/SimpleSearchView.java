@@ -67,7 +67,7 @@ public class SimpleSearchView extends FrameLayout {
     public @interface Style {
     }
 
-    private Context context;
+    private final Context context;
     private int animationDuration = SimpleAnimationUtils.ANIMATION_DURATION_DEFAULT;
     private Point revealAnimationCenter;
     private CharSequence query;
@@ -590,7 +590,11 @@ public class SimpleSearchView extends FrameLayout {
 
         switch (style) {
             case STYLE_CARD:
-                searchContainer.setBackground(getCardStyleBackground());
+                if(Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                    searchContainer.setBackgroundDrawable(getCardStyleBackground());
+                } else {
+                    searchContainer.setBackground(getCardStyleBackground());
+                }
                 bottomLine.setVisibility(View.GONE);
 
                 int cardPadding = DimensUtils.convertDpToPx(CARD_PADDING, context);
@@ -670,7 +674,11 @@ public class SimpleSearchView extends FrameLayout {
     }
 
     public void setSearchBackground(Drawable background) {
-        searchContainer.setBackground(background);
+        if(Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            searchContainer.setBackgroundDrawable(background);
+        } else {
+            searchContainer.setBackground(background);
+        }
     }
 
     public void setTextColor(@ColorInt int color) {
