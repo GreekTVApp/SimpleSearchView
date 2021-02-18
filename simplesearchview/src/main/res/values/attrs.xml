@@ -11,6 +11,7 @@
         <attr name="hintColor" format="color" />
 
         <attr name="searchBackground" format="reference|color" />
+        <attr name="searchBackgroundAlpha" format="float" />
 
         <attr name="searchBackIcon" format="reference" />
         <attr name="searchClearIcon" format="reference" />
