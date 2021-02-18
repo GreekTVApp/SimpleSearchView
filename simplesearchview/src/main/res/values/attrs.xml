@@ -28,5 +28,7 @@
             <enum name="bar" value="0" />
             <enum name="card" value="1" />
         </attr>
+
+        <attr name="showBottomLine" format="boolean" />
     </declare-styleable>
 </resources>

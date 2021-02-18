@@ -200,6 +200,10 @@ public class SimpleSearchView extends FrameLayout {
             setTextColor(typedArray.getColor(R.styleable.SimpleSearchView_android_textColor, getResources().getColor(R.color.default_textColor)));
         }
 
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_showBottomLine)) {
+            setShowBottomLine(typedArray.getBoolean(R.styleable.SimpleSearchView_showBottomLine, true));
+        }
+
         typedArray.recycle();
     }
 
@@ -695,6 +699,15 @@ public class SimpleSearchView extends FrameLayout {
 
     public void setInputType(int inputType) {
         searchEditText.setInputType(inputType);
+    }
+
+    public void setShowBottomLine(boolean bool) {
+        if(bool){
+            bottomLine.setVisibility(VISIBLE);
+        } else {
+            bottomLine.setVisibility(GONE);
+        }
+
     }
 
     /**
