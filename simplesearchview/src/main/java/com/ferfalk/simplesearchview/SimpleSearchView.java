@@ -168,10 +168,6 @@ public class SimpleSearchView extends FrameLayout {
             setSearchBackground(typedArray.getDrawable(R.styleable.SimpleSearchView_searchBackground));
         }
 
-        if (typedArray.hasValue(R.styleable.SimpleSearchView_searchBackgroundAlpha)) {
-            setSearchBackgroundAlpha(typedArray.getFloat(R.styleable.SimpleSearchView_searchBackgroundAlpha, 1));
-        }
-
         if (typedArray.hasValue(R.styleable.SimpleSearchView_searchBackIcon)) {
             setBackIconDrawable(typedArray.getDrawable(R.styleable.SimpleSearchView_searchBackIcon));
         }
@@ -683,10 +679,6 @@ public class SimpleSearchView extends FrameLayout {
         } else {
             searchContainer.setBackground(background);
         }
-    }
-
-    public void setSearchBackgroundAlpha(float alpha) {
-        searchContainer.getBackground().setAlpha((int) alpha * 255);
     }
 
     public void setTextColor(@ColorInt int color) {
