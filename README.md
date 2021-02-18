@@ -1,11 +1,11 @@
 # SimpleSearchView
-[![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
-[![Release](https://img.shields.io/github/release/Ferfalk/SimpleSearchView/all.svg?style=flat)](https://jitpack.io/#Ferfalk/SimpleSearchView)
+[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)
+[![Release](https://img.shields.io/github/release/1nikolas/SimpleSearchView/all.svg?style=flat)](https://jitpack.io/#1nikolas/SimpleSearchView)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SimpleSearchView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7287)
 
 A simple SearchView for Android based on Material Design
 
-* API 16+ *(Reveal animation for API 21 and above, fade animation otherwise)*
+* API 14+ *(Reveal animation for API 21 and above, fade animation otherwise)*
 * Two styles
 * Option to hide TabLayout automatically when it opens
 * Text and animations listeners
@@ -27,7 +27,7 @@ allprojects {
 ```
 Add the Gradle dependency:
 ```groovy
-implementation 'com.github.Ferfalk:SimpleSearchView:0.1.6'
+implementation 'com.github.1nikolas:SimpleSearchView:0.1.7'
 ```
 
 
