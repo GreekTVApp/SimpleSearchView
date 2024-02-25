@@ -27,7 +27,7 @@ allprojects {
 ```
 Add the Gradle dependency:
 ```groovy
-implementation 'com.github.1nikolas:SimpleSearchView:0.1.7'
+implementation 'com.github.GreekTVApp:SimpleSearchView:0.1.9'
 ```
 
 
