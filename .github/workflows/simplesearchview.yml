@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '8'
 
       - name: Restore Gradle Cache
         uses: actions/cache@v4
@@ -37,6 +37,6 @@ jobs:
       - name: Push to Maven
         run: |
           chmod a+x gradlew
-          ./gradlew --configuration-cache --build-cache --parallel --configure-on-demand simplesearchview:publishAllPublicationsToGitHubPackagesRepository
+          ./gradlew --build-cache --parallel --configure-on-demand simplesearchview:publishAllPublicationsToGitHubPackagesRepository
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
