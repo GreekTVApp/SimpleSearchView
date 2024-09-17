@@ -69,8 +69,8 @@ publishing {
                 from components.release
             }
 
-            groupId = 'com.github.GreekTVApp'
-            artifactId = 'SimpleSearchView'
+            groupId = 'com.github.greektvapp'
+            artifactId = 'simplesearchview'
             version = android.defaultConfig.versionName
 
             artifact sourcesJar
