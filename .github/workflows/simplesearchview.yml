@@ -1,0 +1,42 @@
+name: Build SimpleSearchView
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-simplesearchview:
+    runs-on: ubuntu-latest
+
+    env:
+      ALLOW_PUBLIC_REPOS: "true"
+      ALLOW_MISSING_PROJECTS: "true"
+
+    steps:
+      - name: Set Java Version
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Restore Gradle Cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.gradle/
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/build.gradle') }}-${{ hashFiles('app/**/*.xml') }}-${{ hashFiles('app/**.kt', 'app/**.java') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-${{ hashFiles('**/build.gradle') }}-${{ hashFiles('app/**/*.xml') }}-
+            ${{ runner.os }}-gradle-${{ hashFiles('**/build.gradle') }}-
+            ${{ runner.os }}-gradle-
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Push to Maven
+        run: |
+          chmod a+x gradlew
+          ./gradlew --configuration-cache --build-cache --parallel --configure-on-demand simplesearchview:publishAllPublicationsToGitHubPackagesRepository
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
