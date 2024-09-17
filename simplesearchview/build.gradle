@@ -63,6 +63,21 @@ artifacts {
 }
 
 publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            afterEvaluate {
+                from components.release
+            }
+
+            groupId = 'com.github.GreekTVApp'
+            artifactId = 'SimpleSearchView'
+            version = android.defaultConfig.versionName
+
+            artifact sourcesJar
+            artifact javadocJar
+        }
+    }
+
     repositories {
         maven {
             name = "GitHubPackages"
